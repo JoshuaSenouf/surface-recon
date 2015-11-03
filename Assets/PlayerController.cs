@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour {
 			}
 			
 		}
-		moveDirection.y -= gravity * Time.deltaTime;
-		controller.Move(moveDirection * Time.deltaTime);	// The gravity and the rotate move will conflict with each other most of the time, bad method
+		moveDirection.y -= gravity * Time.deltaTime;	// The gravity and the rotate move will conflict with each other most of the time, bad method
+		controller.Move(moveDirection * Time.deltaTime);
 	}
 }
