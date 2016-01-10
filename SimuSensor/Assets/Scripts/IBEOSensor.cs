@@ -33,13 +33,13 @@ using System;
 
 
 public class IBEOSensor : MonoBehaviour {
-	private int angle = 85;
-	private int sampleRate = 10;
-	private float length = 200;
-	private string fileName;
-	private bool sphereTest = false;
-	private bool logTest = false;
-	private bool dataStoringTest = false;
+	public int angle = 85;
+	public int sampleRate = 10;
+	public float length = 200;
+	public string fileName;
+	public bool sphereTest = false;
+	public bool logTest = false;
+	public bool dataStoringTest = false;
 
 	private List<string[]> dataPCD = new List<string[]>();	// List that will store all our points coordinates
 

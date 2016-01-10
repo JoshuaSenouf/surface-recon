@@ -20,3 +20,55 @@ The generated mesh will then be saved in a .PLY file, an open source and known t
 
 IBEO Lux data sheet : http://www.autonomoustuff.com/uploads/9/6/0/5/9605198/ibeo_lux_as.pdf
 Velodyne LiDAR Puck data sheet : http://www.autonomoustuff.com/uploads/9/6/0/5/9605198/vlt-16_data_sheet.pdf
+
+
+____________
+
+
+# PCL Installation
+
+Simply follow the steps in this link : http://pointclouds.org/documentation/tutorials/compiling_pcl_windows.php
+
+Then build the project with CMake, open the .sln that was generated then build the ALL_BUILD project.
+
+
+____________
+
+
+# PCLEngine How-To
+
+To reconstruct a surface with the PCLEngine, a few things have to be respected, like the structure of the command line, which has to look like this:
+
+'
+PCLEngine.exe [name_of_my_file].pcd --no==true/false
+'
+
+then the type of normals computation and/or surface reconstruction you want to use. Here are a few possibilities :
+
+'
+PCLEngine.exe [name_of_my_file].pcd --no==false --fvp --nc --po
+'
+
+This command line will take a PCD file without normals as an input (as you specified with --no=false, this is very important), activate the viewpoint flip (--fvp), compute the normals (--nc) then reconstruction the surface with the Poisson method (--po)
+
+'
+PCLEngine.exe [name_of_my_file].pcd --no==true --mar
+'
+
+This command line will take a PCD file with normals as an input (--no=true) and reconstruct the surface with the Marching Cubes method.
+
+
+____________
+
+
+Here is the arguments list :
+
+--no=true/false 	--> Specify if the input cloud point contains normals or not, in order to use the appropriate datatype
+--fvp 	--> Will flip the viewpoint of the normals in case they are computed
+--omp 	--> Will use the OpenMP version of the normals computation method
+--up 	--> Will upsample the cloud point if MLS method is used
+--nc 	--> Will compute the normals
+--mls 	--> Will compute the normals/upsample the cloud point using the Moving Least Squares method
+--gr 	--> Reconstruct the surface with the Greedy method
+--po 	--> Reconstruct the surface with the Poisson method
+--mar 	--> Reconstruct the surface with the Marching Cubes method
