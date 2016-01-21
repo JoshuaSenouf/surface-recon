@@ -22,6 +22,9 @@ IBEO Lux data sheet : http://www.autonomoustuff.com/uploads/9/6/0/5/9605198/ibeo
 Velodyne LiDAR Puck data sheet : http://www.autonomoustuff.com/uploads/9/6/0/5/9605198/vlt-16_data_sheet.pdf
 
 
+Article from the project : https://dl.dropboxusercontent.com/u/40430230/TX52_SURFACE_RECONSTRUCTION.pdf
+
+
 ____________
 
 
